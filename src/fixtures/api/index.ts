@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test'
-import { ProductsService } from '../../support/services/products.service'
+import { ProductsService } from '../../support/services/products-api'
 import { ApiResponseAssertions } from '../../support/assertions/apiResponseAssertions'
 
 type ApiFixtures = {

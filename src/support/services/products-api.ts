@@ -1,5 +1,5 @@
 
-import { BaseApiClient } from './baseApiClient';
+import { BaseApiClient } from './base-api-client';
 
 export class ProductsService extends BaseApiClient {
   
