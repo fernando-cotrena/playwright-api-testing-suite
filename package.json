@@ -4,7 +4,11 @@
   "description": "Pruebas automatizadas de APIs con Playwright + TypeScript. Incluye API Client, tests parametrizables, reportes HTML y CI con GitHub Actions.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "test": "npx playwright test",
+  "test:functional": "npx playwright test tests/functional",
+  "test:contract": "npx playwright test tests/contract",
+  "report": "npx playwright show-report",
+  "report:open": "node ./scripts/open-report.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +22,13 @@
     "url": "https://github.com/fernando-cotrena/playwright-api-testing-suite/issues"
   },
   "homepage": "https://github.com/fernando-cotrena/playwright-api-testing-suite#readme",
-  "dependencies": {
-    "zod": "^4.1.13"
+  
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "typescript": "^5.3.0",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.0.0",
+    "ajv": "^8.12.0",
+     "zod": "^4.1.13"
   }
 }

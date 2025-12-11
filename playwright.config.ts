@@ -6,5 +6,5 @@ export default defineConfig({
     baseURL: 'https://fakestoreapi.com/',
   
   },
-  reporter: [['html', { outputFolder: 'report' }]]
+  reporter: [['html', ]]
 });
