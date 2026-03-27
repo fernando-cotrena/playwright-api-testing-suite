@@ -1,60 +1,72 @@
-🧪 Playwright API Testing Suite
+# 🧪 Playwright API Testing Suite
 
-Automatización de pruebas de API usando Playwright + TypeScript, con foco en:
+API testing automation framework using Playwright + TypeScript. This framework is highly scalable and supports both REST and GraphQL APIs.
 
-Tests funcionales y de contrato.
+## ✨ Features
+- Structured architecture: Base Clients, Domain Services, Schemas, Utils, and Tests.
+- Reusable service classes integrated seamlessly via Playwright fixtures.
+- Schema definitions and validation using **Zod**.
+- Built-in support for **REST** and **GraphQL** queries.
+- Automatic parallel execution and detailed HTML reporting.
 
-Reutilización de servicios, fixtures y assertions.
+## 📁 Project Structure
 
-Validación de esquemas (Zod / Ajv).
-
-Ejecución paralela.
-
-Reportes HTML generados automáticamente.
-
-📁 Estructura del proyecto
+```text
 .
 ├─ src/
-│  ├─ fixtures/          # Fixtures de Playwright (API clients)
-│  └─ support/
-│     ├─ services/       # Clientes API (ProductsApi, SearchApi)
-│     ├─ assertions/     # Validaciones reutilizables
-│     ├─ schemas/        # Esquemas JSON
-│     └─ data/           # Datos de prueba
+│  ├─ clients/           # Base API clients (RESTClient, GraphQLClient)
+│  ├─ services/          # Domain-specific services (e.g., ProductsService, UsersService)
+│  ├─ schemas/           # Data validation schemas (Zod)
+│  ├─ utils/             # Utilities (Custom Response Assertions, validators)
+│  └─ fixtures/          # Playwright fixtures injecting the respective services
 ├─ tests/
-│  ├─ functional/        # Tests funcionales
-│  └─ contract/          # Tests de contrato
-├─ playwright-report/    # Reportes HTML (autogenerado)
-├─ test-results/         # Resultados crudos
-├─ playwright.config.ts  # Configuración de Playwright
+│  ├─ rest/              # REST APIs tests (functional and contract tests)
+│  └─ graphql/           # GraphQL APIs tests
+├─ playwright.config.ts  # Playwright global configuration
 └─ package.json
+```
 
-🚀 Instalación
-git clone <repo-url>
-cd playwright-api-testing-suite
-npm install
+## 🚀 Installation
 
-▶️ Ejecución de tests
-🔹 Ejecutar todos los tests
-npm test
+1. Clone this repository.
+2. Navigate into the project directory:
+   ```bash
+   cd playwright-api-testing-suite
+   ```
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
 
-🔹 Ejecutar solo tests de contrato
-npm run test:contract
+## ▶️ Running Tests
 
-🔹 Ejecutar solo tests de servicio (o funcionales)
-npm run test:service
+You can use the Playwright CLI to execute tests in different ways:
 
-🔹 Ejecutar ambas suites manualmente
-npm run test:all
+**Run all tests in headless mode:**
+```bash
+npx playwright test
+```
 
-📊 Reportes HTML
-Generar y abrir reporte estándar:
-npm run report
+**Run all tests in interactive UI mode:**
+```bash
+npx playwright test --ui
+```
 
-🤝 Conectemos
+**Run specific test suites (e.g., only REST or GraphQL tests):**
+```bash
+npx playwright test tests/rest
+npx playwright test tests/graphql
+```
 
-Si querés ver más proyectos o contactar:
+## 📊 HTML Reports
 
-👉 LinkedIn: https://www.linkedin.com/in/fernandocotrena
+By default, Playwright generates an HTML report after a test run finishes. To open the report and review the test execution details (including network traces):
+```bash
+npx playwright show-report
+```
 
-👉 GitHub: https://github.com/fernandocotrena
+---
+🤝 **Let's Connect**
+Check out more projects or get in touch:
+👉 **LinkedIn:** [fernandocotrena](https://www.linkedin.com/in/fernandocotrena)
+👉 **GitHub:** [fernandocotrena](https://github.com/fernandocotrena)
