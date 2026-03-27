@@ -1,5 +1,5 @@
 import { test } from '../../src/fixtures/api'
-import { ApiResponseAssertions } from '../../src/support/assertions/api-response-assertions'
+import { ApiResponseAssertions } from '../../src/utils/api-response-assertions'
 
 test('Funcional: /productsList devuelve productos', async ({ productsApi }) => {
   const response = await productsApi.getProductsList()

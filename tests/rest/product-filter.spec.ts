@@ -1,5 +1,5 @@
 import { test } from '../../src/fixtures/api'
-import { ApiResponseAssertions } from '../../src/support/assertions/api-response-assertions'
+import { ApiResponseAssertions } from '../../src/utils/api-response-assertions'
 
 const productIds = [1, 2, 3]
 
